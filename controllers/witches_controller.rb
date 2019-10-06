@@ -1,0 +1,5 @@
+require('sinatra')
+require('sinatra/contrib/all')
+require_relative('../models/witch.rb')
+require_relative('../models/familiar.rb')
+also_reload('../models/*')
