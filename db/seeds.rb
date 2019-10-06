@@ -48,11 +48,26 @@ witch1 = Witch.new({
 
 witch1.save()
 
+witch2 = Witch.new({
+  "first_name" => "Sophie",
+  "last_name" => "Hatter"
+  })
 
+witch2.save()
 
+witch3 = Witch.new({
+  "first_name" => "Eskarina",
+  "last_name" => "Smith"
+  })
 
+witch3.save()
 
+witch4 = Witch.new({
+  "first_name" => "Mildred",
+  "last_name" => "Hubble"
+  })
 
+witch4.save()
 
 binding.pry
 nil
