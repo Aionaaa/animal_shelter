@@ -26,6 +26,15 @@ class Witch
     @id = results.first()['id'].to_i
   end
 
+  def familiars()
+    sql = "SELECT name FROM familiars
+    INNER JOIN witches ON familiars.owner_id = owner.id
+    WHERE owner_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map{|familiar| Familiar.new(familiar)}
+  end
+
   def self.all()
     sql = "SELECT * FROM witches"
     results = SqlRunner.run(sql)
