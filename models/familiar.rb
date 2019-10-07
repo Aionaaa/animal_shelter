@@ -51,6 +51,12 @@ class Familiar
     SqlRunner.run(sql)
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM witches WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def update()
     sql = "UPDATE familiars
     SET

@@ -32,8 +32,23 @@ class Witch
     return results.map{|hash| Witch.new(hash)}
   end
 
-  
+  def self.find(id)
+    sql = "SELECT * FROM witches WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Witch.new(results.first)
+  end
 
+  def self.delete_all()
+    sql = "DELETE FROM witches"
+    SqlRunner.run(sql)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM witches WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
 
   def format_name
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
