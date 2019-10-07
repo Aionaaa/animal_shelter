@@ -2,8 +2,8 @@ require_relative("../models/familiar")
 require_relative("../models/witch")
 require("pry")
 
-Familiar.delete_all()
 Witch.delete_all()
+Familiar.delete_all()
 
 familiar1 = Familiar.new({
   "name" => "Lying Cat",

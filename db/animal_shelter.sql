@@ -1,5 +1,5 @@
-DROP TABLE familiars;
 DROP TABLE witches;
+DROP TABLE familiars;
 
 CREATE TABLE witches
 (
@@ -15,5 +15,5 @@ CREATE TABLE familiars
   species VARCHAR(255),
   admission_date VARCHAR(255),
   adoptable BOOLEAN,
-  owner_id INT8 REFERENCES owner(id)
+  owner_id INT8 REFERENCES witches(id) ON DELETE CASCADE
 );

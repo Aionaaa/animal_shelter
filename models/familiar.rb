@@ -28,8 +28,8 @@ class Familiar
         $1, $2, $3, $4, $5
       )
       RETURNING id"
-      values = [@name, @type]
-      results = Sqlrunner.run(sql, values)
+      values = [@name, @species, @admission_date, @adoptable, @owner_id]
+      results = SqlRunner.run(sql, values)
       @id = results.first()['id'].to_i
     end
 

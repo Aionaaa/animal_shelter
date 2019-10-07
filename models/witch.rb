@@ -62,3 +62,5 @@ class Witch
   def format_name
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end
+
+end
