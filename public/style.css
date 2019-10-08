@@ -4,3 +4,11 @@ body {
   color: Gold;
   background-image: url("/images/images.jpg");
 }
+
+.familiar {
+  padding: 50px;
+}
+
+.witch {
+  padding: 50px
+}
