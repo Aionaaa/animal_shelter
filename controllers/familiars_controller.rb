@@ -5,7 +5,7 @@ require_relative('../models/familiar.rb')
 also_reload('../models/*')
 
 get '/familiars' do
-  @familiars = Familar.all()
+  @familiars = Familiar.all()
   erb(:"familiars/index")
 end
 
