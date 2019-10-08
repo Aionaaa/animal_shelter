@@ -76,7 +76,7 @@ class Familiar
       SqlRunner.run(sql, values)
     end
 
-    def witches
+    def witch
       witch = Witch.find(@owner_id)
       return witch
     end

@@ -4,5 +4,5 @@
 <p>Admission Date: <%= @familiar.admission_date %></p>
 <p>Adoptable?: <%= @familiar.adoptable %></p>
 <% if @familiar.owner_id  != nil %>
-<p>Owner: <%= @familiar.owner_id.name %></p>
+<p>Owner: <%= @familiar.witch.format_name %></p>
 <% end %>

@@ -1,0 +1,16 @@
+<h1>Assign <%= @familiar.name %> to a Witch </h1>
+
+<form action="/familiars/<%= @familiar.id %>/assign" method="post">
+
+
+  <label>
+    Select a witch:
+    <select name="owner_id">
+      <% for witch in @witches %>
+      <option value="<%= witch.id %>"><%= witch.format_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <input class="btn btn--action" type='submit' value="OK">
+</form>
