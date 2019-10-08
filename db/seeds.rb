@@ -38,7 +38,7 @@ familiar1 = Familiar.new({
   "species" => "cat",
   "admission_date" => "June 2018",
   "adoptable" => true,
-  "owner_id" => witch1.id
+  # "owner_id" => witch1.id
   })
 
 familiar1.save()

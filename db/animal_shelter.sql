@@ -1,5 +1,5 @@
-DROP TABLE witches;
 DROP TABLE familiars;
+DROP TABLE witches;
 
 CREATE TABLE witches
 (

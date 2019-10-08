@@ -2,7 +2,9 @@ require_relative('../db/sql_runner')
 
 class Familiar
 
-  attr_reader(:name, :species, :admission_date, :adoptable, :id)
+  attr_accessor(:adoptable)
+  attr_reader(:name, :species, :admission_date, :id)
+
 
   def initialize(options)
     @id = options['id'].to_i if
@@ -11,7 +13,7 @@ class Familiar
       @species = options['species']
       @admission_date = options['admission_date']
       @adoptable = options['adoptable']
-      @owner_id = options['owner_id'].to_i
+      @owner_id = options['owner_id'].to_i if options['owner_id']
     end
 
   def save()
