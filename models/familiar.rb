@@ -2,19 +2,18 @@ require_relative('../db/sql_runner')
 
 class Familiar
 
-  attr_accessor(:adoptable)
+  attr_accessor(:adoptable, :owner_id)
   attr_reader(:name, :species, :admission_date, :id)
 
 
   def initialize(options)
-    @id = options['id'].to_i if
-      options['id']
-      @name = options['name']
-      @species = options['species']
-      @admission_date = options['admission_date']
-      @adoptable = options['adoptable']
-      @owner_id = options['owner_id'].to_i if options['owner_id']
-    end
+    @id = options['id'].to_i if options['id']
+    @name = options['name']
+    @species = options['species']
+    @admission_date = options['admission_date']
+    @adoptable = options['adoptable']
+    @owner_id = options['owner_id'].to_i if options['owner_id']
+  end
 
   def save()
     sql = "INSERT INTO familiars
@@ -27,17 +26,17 @@ class Familiar
     )
     VALUES
     (
-        $1, $2, $3, $4, $5
-      )
-      RETURNING id"
-      values = [@name, @species, @admission_date, @adoptable, @owner_id]
-      results = SqlRunner.run(sql, values)
-      @id = results.first()['id'].to_i
-    end
+      $1, $2, $3, $4, $5
+    )
+    RETURNING id"
+    values = [@name, @species, @admission_date, @adoptable, @owner_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
 
   def self.all()
     sql = "SELECT * FROM familiars"
-    results = Sqlrunner.run(sql)
+    results = SqlRunner.run(sql)
     return results.map{|hash| Familiar.new(hash)}
   end
 
@@ -68,18 +67,18 @@ class Familiar
       admission_date,
       adoptable,
       owner_id
-    ) =
-    (
-      $1, $2, $3, $4, $5
-    )
-    WHERE id = $5"
-    values = [@name, @species, @admission_date, @adoptable, @owner_id]
-    SqlRunner.run(sql, values)
-  end
+      ) =
+      (
+        $1, $2, $3, $4, $5
+      )
+      WHERE id = $5"
+      values = [@name, @species, @admission_date, @adoptable, @owner_id]
+      SqlRunner.run(sql, values)
+    end
 
-  def witches
-    witch = Witch.find(@owner_id)
-    return witch
-  end
+    def witches
+      witch = Witch.find(@owner_id)
+      return witch
+    end
 
-  end
+end

@@ -38,7 +38,7 @@ familiar1 = Familiar.new({
   "species" => "cat",
   "admission_date" => "June 2018",
   "adoptable" => true,
-  # "owner_id" => witch1.id
+  "owner_id" => nil
   })
 
 familiar1.save()
@@ -47,7 +47,8 @@ familiar2 = Familiar.new({
   "name" => "Salem",
   "species" => "cat",
   "admission_date" => "February 2019",
-  "adoptable" => false
+  "adoptable" => false,
+  "owner_id" => nil
   })
 
 familiar2.save()
@@ -56,7 +57,8 @@ familiar3 = Familiar.new({
   "name" => "Hedwig",
   "species" => "owl",
   "admission_date" => "January 2019",
-  "adoptable" => true
+  "adoptable" => true,
+  "owner_id" => nil
   })
 
 familiar3.save()
@@ -65,7 +67,8 @@ familiar4 = Familiar.new({
   "name" => "Pantalaimon",
   "species" => "ermine",
   "admission_date" => "March 1861",
-  "adoptable" => false
+  "adoptable" => false,
+  "owner_id" => nil
   })
 
 familiar4.save()

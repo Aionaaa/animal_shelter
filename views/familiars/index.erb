@@ -1,11 +1,10 @@
-<<h1>Familiars</h1>
-
+<h1>Familiars</h1>
+<% for familiar in @familiars %>
 <div class ="familiar">
-  <h3><a href="/familiars/<%= familiar.id %>"<%= familiar.name %></h3>
-  <p>Species: <%= familiar.species %></p>
-  <p>Admission Date: <%= familiar.admission_date %></p>
-  <p>Adoptable?: <%= familiar.adoptable %></p>
-  <p>Owned by: <%= familiar.owner_id.name %></p>
-
+  <h3><a href="/familiars/<%= familiar.id %>"><%= familiar.name %></a></h3>
+    <p>Species: <%= familiar.species %></p>
+    <p>Admission Date: <%= familiar.admission_date %></p>
+    <p>Adoptable?: <%= familiar.adoptable %></p>
+    <hr>
+  </div>
   <% end %>
-</div>

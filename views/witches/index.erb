@@ -1,6 +1,7 @@
 <h1>Witches</h1>
-
+<% for witch in @witches %>
 <div class="witch">
   <h3><a href="/witches/<%= witch.id %>"><%= witch.format_name %></a></h3>
-  <% end %>
+  <hr>
 </div>
+<% end %>
