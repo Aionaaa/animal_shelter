@@ -1,0 +1,9 @@
+<h2><%= @familiar.name %></h2>
+
+<p>Species: <%= @familiar.species.capitalize %></p>
+<p>Admission Date: <%= @familiar.admission_date %></p>
+<p>Adoptable?: <%= @familiar.adoptable %></p>
+<p>Owner: <%= @familiar.owner_id.name %></p>
+
+<a href="/familiars/<%= @familiar.id %>/edit">Edit</a>
+<form action="/familiars/<%= @familiar.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

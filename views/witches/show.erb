@@ -1,0 +1,6 @@
+<h2><%= @witch.name %></h2>
+
+<p>Name: <%= @witch.format_name.capitalize %></p>
+
+<a href="/witches/<%= @witch.id %>/edit">Edit</a>
+<form action="/witches/<%= @witch.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

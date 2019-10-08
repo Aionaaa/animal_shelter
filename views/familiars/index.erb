@@ -1,0 +1,11 @@
+<<h1>Familiars</h1>
+
+<div class ="familiar">
+  <h3><a href="/familiars/<%= familiar.id %>"<%= familiar.name %></h3>
+  <p>Species: <%= familiar.species %></p>
+  <p>Admission Date: <%= familiar.admission_date %></p>
+  <p>Adoptable?: <%= familiar.adoptable %></p>
+  <p>Owned by: <%= familiar.owner_id.name %></p>
+
+  <% end %>
+</div>
