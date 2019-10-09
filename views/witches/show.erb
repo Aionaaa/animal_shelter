@@ -1,3 +1,6 @@
 <h2><%= @witch.format_name %></h2>
 
 <p>Name: <%= @witch.format_name.capitalize %></p>
+<% for familiar in @witch.familiars %>
+<p>Familiar: <%= familiar.name %></p>
+<% end %>
