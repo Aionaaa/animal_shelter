@@ -36,7 +36,7 @@ witch4.save()
 familiar1 = Familiar.new({
   "name" => "Lying Cat",
   "species" => "cat",
-  "admission_date" => "June 2018",
+  "admission_date" => "June 2017",
   "adoptable" => true,
   "owner_id" => nil
   })
