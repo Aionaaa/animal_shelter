@@ -1,0 +1,39 @@
+<h1>Edit <%= @familiar.name %></h1>
+
+<form action="/familiars/<%= @familiar.id %>/edit" method="post">
+
+
+<input type="hidden" name="name" value="<%= @familiar.owner_id %>">
+
+<label for="name-field">Name:</label>
+<input
+type="text"
+name="name"
+id="name-field"
+value="<%= @familiar.name %>"
+
+<label for="species-field">Species:</label>
+<input
+type="text"
+name="species"
+id="species-field"
+value="<%= @familiar.species %>"
+
+<label for="admission-date-field">Admission Date:</label>
+<input
+type="text"
+name="admission_date"
+id="admission-date-field"
+value="<%= @familiar.admission_date %>"
+
+<label for="adoptable-field">Adoptable:</label>
+<input
+type="bool"
+name="adoptable"
+id="adoptable-field"
+value="<%= @familiar.adoptable %>"
+
+  <input class="btn btn--action" type='submit' value="OK">
+</form>
+
+name, species, admission date, adoptable
