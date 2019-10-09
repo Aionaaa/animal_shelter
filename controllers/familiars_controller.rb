@@ -34,3 +34,14 @@ post "/familiars/:id/assign" do
   familiar.update()
   redirect to '/familiars'
 end
+
+
+get '/familiars/:id/edit' do # edit
+  @familiar = Familiar.find( params[:id] )
+  erb( :"familiars/edit" )
+end
+
+post '/familiars/:id/edit' do # update
+  Familiar.new( params ).update
+  redirect to '/familiars'
+end

@@ -1,6 +1,6 @@
 <h1>Edit <%= @familiar.name %></h1>
 
-<form action="/familiars/<%= @familiar.id %>/edit" method="post">
+<form method="POST" action="/familiars/<%= @familiar.id %>/edit" method="post">
 
 
 <input type="hidden" name="name" value="<%= @familiar.owner_id %>">
@@ -33,7 +33,9 @@ name="adoptable"
 id="adoptable-field"
 value="<%= @familiar.adoptable %>"
 
-  <input class="btn btn--action" type='submit' value="OK">
-</form>
+<div class="form-el">
+  <input type="submit" value="Submit">
+</div>
 
-name, species, admission date, adoptable
+  <!-- <input class="btn btn--action" type='submit' value="OK"> -->
+</form>
