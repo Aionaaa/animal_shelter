@@ -71,8 +71,8 @@ class Familiar
       (
         $1, $2, $3, $4, $5
       )
-      WHERE id = $5"
-      values = [@name, @species, @admission_date, @adoptable, @owner_id]
+      WHERE id = $6"
+      values = [@name, @species, @admission_date, @adoptable, @owner_id, @id]
       SqlRunner.run(sql, values)
     end
 

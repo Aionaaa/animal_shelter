@@ -4,6 +4,8 @@ require_relative('../models/witch.rb')
 require_relative('../models/familiar.rb')
 also_reload('../models/*')
 
+require("pry")
+
 get '/familiars' do
   @familiars = Familiar.all()
   erb(:"familiars/index")
@@ -28,8 +30,7 @@ get "/familiars/:id/adoption-form" do
 end
 
 post "/familiars/:id/assign" do
-  familiar = Familiar.find(params["id"])
-  familiar.owner_id = params["owner_id"].to_i
+  familiar = Familiar.new(params)
   familiar.update()
   redirect to '/familiars'
 end
