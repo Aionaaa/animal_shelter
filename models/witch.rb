@@ -51,9 +51,9 @@ class Witch
     SqlRunner.run(sql)
   end
 
-  def self.delete(id)
+  def delete
     sql = "DELETE FROM witches WHERE id = $1"
-    values = [id]
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 

@@ -2,6 +2,9 @@
 <% for witch in @witches %>
 <div class="witch">
   <h3><a href="/witches/<%= witch.id %>"><%= witch.format_name %></a></h3>
+  <form  action="/witches/<%= witch.id %>/delete" method="post">
+    <input type="submit" value="Delete">
+  </form>
   <hr>
 </div>
 <% end %>

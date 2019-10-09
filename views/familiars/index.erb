@@ -7,6 +7,9 @@
     <p>Adoptable?: <%= familiar.adoptable %></p>
     <p><a href="/familiars/<%= familiar.id %>/adoption-form">Assign</a></p>
     <p><a href='/familiars/<%= familiar.id %>/edit'>Edit</a></p>
+    <form  action="/familiars/<%= familiar.id %>/delete" method="post">
+      <input type="submit" value="Delete">
+    </form>
     <hr>
   </div>
   <% end %>

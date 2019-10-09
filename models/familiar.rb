@@ -2,8 +2,8 @@ require_relative('../db/sql_runner')
 
 class Familiar
 
-  attr_accessor(:adoptable, :owner_id)
-  attr_reader(:name, :species, :admission_date, :id)
+  attr_accessor(:name, :species, :admission_date, :adoptable, :owner_id)
+  attr_reader(:id)
 
 
   def initialize(options)
@@ -52,9 +52,9 @@ class Familiar
     SqlRunner.run(sql)
   end
 
-  def self.delete(id)
-    sql = "DELETE FROM witches WHERE id = $1"
-    values = [id]
+  def delete
+    sql = "DELETE FROM familiars WHERE id = $1"
+    values = [@id]
     SqlRunner.run(sql, values)
   end
 

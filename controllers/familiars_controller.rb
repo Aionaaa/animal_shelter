@@ -11,16 +11,20 @@ get '/familiars' do
   erb(:"familiars/index")
 end
 
+get '/familiars/new' do # new
+  erb( :'familiars/new' )
+end
+
+post '/familiars/add' do # create
+  @familiar = Familiar.new( params )
+  @familiar.save()
+  erb( :'familiars/create' )
+end
+
 get '/familiars/:id' do
   @familiar =
   Familiar.find(params['id'].to_i)
   erb(:"familiars/show")
-end
-
-get '/familiars/new' do
-  @witches = Witch.all
-  @familiars = Familiar.all
-  erb(:"familiars/adopt")
 end
 
 get "/familiars/:id/adoption-form" do
@@ -43,5 +47,11 @@ end
 
 post '/familiars/:id/edit' do # update
   Familiar.new( params ).update
+  redirect to '/familiars'
+end
+
+post '/familiars/:id/delete' do # delete
+  familiar = Familiar.find( params[:id] )
+  familiar.delete()
   redirect to '/familiars'
 end
